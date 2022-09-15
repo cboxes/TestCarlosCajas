@@ -1,0 +1,73 @@
+<div class="container">
+    <h1>Employees</h1>
+
+    <div class="enterprises-container">
+        <div class="enterprises-form">
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+                <!-- <div class="form-group" >
+                    <label for="">Id</label>
+                    <input type="text" name="Id" [(ngModel)]="enterprise1.Id">              
+                </div>                 -->
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" name="name" [(ngModel)]="employee1.name">
+                </div>
+                <div class="form-group">
+                    <label for="">Age</label>
+                    <input type="text" name="age" [(ngModel)]="employee1.age">
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" name="email" [(ngModel)]="employee1.email">
+                </div>
+                <div class="form-group">
+                    <label for="">Position</label>
+                    <input type="text" name="position" [(ngModel)]="employee1.position">
+                </div>
+                <div class="form-group">
+                    <label for="">Surname</label>
+                    <input type="text" name="surname" [(ngModel)]="employee1.surname">
+                </div>
+                <div class="form-group">
+                    <label for="">Status</label>
+                    <input type="checkbox" name="status" [(ngModel)]="employee1.status">
+                </div>
+                <!-- <div class="form-group form-group-inline">
+                <div>
+                    <label for="">Created by</label>
+                    <input type="text" name="created_by" [(ngModel)]="enterprise1.created_by">
+                </div>
+                <div>
+                    <label for="">Created date</label>
+                    <input type="text" name="created_date" [(ngModel)]="enterprise1.created_date">
+                </div>
+                <div>
+                    <label for="">Modified by</label>
+                    <input type="text" name="modified_by" [(ngModel)]="enterprise1.modified_by">
+                </div>
+                <div>
+                    <label for="">Modified date</label>
+                    <input type="text" name="modified_date" [(ngModel)]="enterprise1.modified_date">
+                </div> 
+            </div> -->
+            <div class="form-group">
+                <button>
+                    Save
+                </button>
+            </div>
+            </form>
+        </div>
+        <div class="enterprises-grid" >
+            <div class="enterprises-row" *ngFor="let data of employee">
+                <div class="enterprises-row-details" (click)="populateFormEmployee(data)">
+                    <!-- <span>{{ data.id }}</span> -->
+                    <span>{{ data.name }}</span>
+                    <span>{{ data.position }}</span>
+                </div>
+                <div class="enterprises-row-action">
+                    <a (click)="deleteEmployee(data.id)"><i class="fa-solid fa-trash-can"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
